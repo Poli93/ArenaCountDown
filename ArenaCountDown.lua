@@ -1,4 +1,4 @@
--- /script countdown = 60
+	-- /script countdown = 60
 
 local hidden = false
 local countdown = -1
@@ -15,18 +15,20 @@ ACDFrame:RegisterEvent("CHAT_MSG_BG_SYSTEM_NEUTRAL")
 
 local ACDNumFrame = CreateFrame("Frame", "ACDNumFrame", UIParent)
 ACDNumFrame:SetSize(256, 64)
-ACDNumFrame:SetPoint("CENTER", UIParent, "CENTER", 115, 250)
+ACDNumFrame:SetPoint("CENTER", UIParent, "CENTER", 0, 250)
 ACDNumFrame:Show()
 
 local ACDText = ACDNumFrame:CreateFontString("ACDText", "OVERLAY")
-ACDText:SetPoint("LEFT", ACDNumFrame, "LEFT", 0, 0)
+ACDText:SetPoint("CENTER", ACDNumFrame, "CENTER", 0, 0)
 
 ACDText:SetFont("Fonts\\FRIZQT__.TTF", 21, "OUTLINE")
 
 ACDText:SetShadowColor(0, 0, 0, 1)
 ACDText:SetShadowOffset(1, -1)
 
-ACDText:SetJustifyH("LEFT")
+ACDText:SetJustifyH("CENTER")
+ACDText:SetWidth(200)
+ACDText:SetWordWrap(false)
 
 ACDFrame:SetScript("OnUpdate", function(self, elapsed)
     if countdown > 0 then
